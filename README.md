@@ -2,6 +2,16 @@
 
 A sleek and responsive weather application built with Next.js, providing weather information through Meteo API's.
 
+## Screenshots
+
+Here's a look at the Weather Box in action:
+
+![Weather App Main Screen 1](https://github.com/crazy-leaf/weather-box-open-meteo-inrisk/blob/main/screenshots/Screenshot%202025-05-23%20at%208.03.46%E2%80%AFPM.png)
+
+![Weather App Main Screen 2](https://github.com/crazy-leaf/weather-box-open-meteo-inrisk/blob/main/screenshots/Screenshot%202025-05-23%20at%208.04.21%E2%80%AFPM.png)
+
+![Weather App Main Screen 3](https://github.com/crazy-leaf/weather-box-open-meteo-inrisk/blob/main/screenshots/Screenshot%202025-05-23%20at%208.04.51%E2%80%AFPM.png)
+
 ## 🚀 Technologies Used
 
 * [Next.js](https://nextjs.org/) - React framework for production
