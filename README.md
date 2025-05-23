@@ -16,7 +16,7 @@ Here's a look at the Weather Box in action:
 
 * [Next.js](https://nextjs.org/) - React framework for production
 * [React](https://react.dev/) - JavaScript library for building user interfaces
-* [Open-Meteo](https://open-meteo.com/) - Free weather API (specify if you used a different one)
+* [Open-Meteo](https://open-meteo.com/) - Free weather API
 * [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
 * [Vercel](https://vercel.com/) - For deployment
 
@@ -36,7 +36,7 @@ Make sure you have Node.js installed on your machine.
 1.  **Clone the repository:**
 
     ```bash
-    git clone (https://github.com/crazy-leaf/weather-box-open-meteo-inrisk.git)
+    git clone https://github.com/crazy-leaf/weather-box-open-meteo-inrisk.git
     cd weather-box-open-meteo-inrisk
     ```
 
