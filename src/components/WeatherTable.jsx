@@ -25,7 +25,7 @@ const WeatherTable = ({ data }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
   
-  if (!data || data.length === 0) {
+  if (!data || data?.length === 0) {
     return (
       <Card className="w-full mt-6 bg-gray-50 border border-dashed animate-slide-in">
         <div className="py-10 text-center text-gray-500">
@@ -36,10 +36,10 @@ const WeatherTable = ({ data }) => {
     );
   }
   
-  const totalPages = Math.ceil(data.length / pageSize);
+  const totalPages = Math.ceil(data?.length / pageSize);
   const startIndex = (currentPage - 1) * pageSize;
-  const endIndex = Math.min(startIndex + pageSize, data.length);
-  const currentData = data.slice(startIndex, endIndex);
+  const endIndex = Math.min(startIndex + pageSize, data?.length);
+  const currentData = data?.slice(startIndex, endIndex);
   
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -108,7 +108,7 @@ const WeatherTable = ({ data }) => {
         <div className="flex items-center space-x-2 mt-2 sm:mt-0">
           <span className="text-sm text-gray-500">Rows per page:</span>
           <Select 
-            value={pageSize.toString()} 
+            value={pageSize?.toString()} 
             onValueChange={(value) => {
               setPageSize(Number(value));
               setCurrentPage(1);
@@ -144,14 +144,14 @@ const WeatherTable = ({ data }) => {
           </TableHeader>
           <TableBody>
             {currentData.map((day, index) => (
-              <TableRow key={day.date || index} className={index % 2 === 0 ? "bg-gray-50" : ""}>
-                <TableCell className="font-medium">{formatDate(day.date)}</TableCell>
-                <TableCell className="text-right">{formatTemp(day.temperature_2m_max)}</TableCell>
-                <TableCell className="text-right">{formatTemp(day.temperature_2m_min)}</TableCell>
-                <TableCell className="text-right">{formatTemp(day.temperature_2m_mean)}</TableCell>
-                <TableCell className="text-right">{formatTemp(day.apparent_temperature_max)}</TableCell>
-                <TableCell className="text-right">{formatTemp(day.apparent_temperature_min)}</TableCell>
-                <TableCell className="text-right">{formatTemp(day.apparent_temperature_mean)}</TableCell>
+              <TableRow key={day?.date || index} className={index % 2 === 0 ? "bg-gray-50" : ""}>
+                <TableCell className="font-medium">{formatDate(day?.date)}</TableCell>
+                <TableCell className="text-right">{formatTemp(day?.temperature_2m_max)}</TableCell>
+                <TableCell className="text-right">{formatTemp(day?.temperature_2m_min)}</TableCell>
+                <TableCell className="text-right">{formatTemp(day?.temperature_2m_mean)}</TableCell>
+                <TableCell className="text-right">{formatTemp(day?.apparent_temperature_max)}</TableCell>
+                <TableCell className="text-right">{formatTemp(day?.apparent_temperature_min)}</TableCell>
+                <TableCell className="text-right">{formatTemp(day?.apparent_temperature_mean)}</TableCell>
               </TableRow>
             ))}
           </TableBody>

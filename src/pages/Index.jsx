@@ -18,7 +18,7 @@ const Index = () => {
 
   const handleSubmit = useCallback(async (formData) => {
     try {
-      const queryKey = `${formData.latitude},${formData.longitude},${formData.startDate.toISOString()},${formData.endDate.toISOString()}`;
+      const queryKey = `${formData?.latitude},${formData?.longitude},${formData?.startDate?.toISOString()},${formData?.endDate?.toISOString()}`;
       
       if (lastQuery === queryKey) {
         toast.info('Using cached weather data');
@@ -40,8 +40,8 @@ const Index = () => {
       
       setWeatherData(data);
       setLocation({
-        latitude: formData.latitude,
-        longitude: formData.longitude
+        latitude: formData?.latitude,
+        longitude: formData?.longitude
       });
       setLastQuery(queryKey);
       
@@ -60,7 +60,7 @@ const Index = () => {
     }
   }, [lastQuery]);
   
-  const hasValidData = weatherData && weatherData.length > 0;
+  const hasValidData = weatherData && weatherData?.length > 0;
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -77,13 +77,13 @@ const Index = () => {
         {location && (
           <section className="bg-white p-4 rounded-lg shadow-sm">
             <h2 className="text-xl font-semibold mb-2 text-weather-gray-dark">
-              Weather Data for {location.latitude.toFixed(4)}, {location.longitude.toFixed(4)}
+              Weather Data for {location?.latitude?.toFixed(4)}, {location?.longitude?.toFixed(4)}
             </h2>
             {hasValidData && (
               <p className="text-sm text-weather-gray mb-4">
-                Showing data from {new Date(weatherData[0].date).toLocaleDateString()} to {
-                  new Date(weatherData[weatherData.length - 1].date).toLocaleDateString()
-                } ({weatherData.length} days)
+                Showing data from {new Date(weatherData[0]?.date)?.toLocaleDateString()} to {
+                  new Date(weatherData[weatherData?.length - 1]?.date)?.toLocaleDateString()
+                } ({weatherData?.length} days)
               </p>
             )}
           </section>

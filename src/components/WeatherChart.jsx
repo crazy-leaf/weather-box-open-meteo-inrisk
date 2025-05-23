@@ -24,14 +24,14 @@ const WeatherChart = ({ data }) => {
     );
   }
 
-  const chartData = data.map(day => ({
-    date: day.date,
-    maxTemp: day.temperature_2m_max,
-    minTemp: day.temperature_2m_min,
-    meanTemp: day.temperature_2m_mean,
-    maxApparentTemp: day.apparent_temperature_max,
-    minApparentTemp: day.apparent_temperature_min,
-    meanApparentTemp: day.apparent_temperature_mean,
+  const chartData = data?.map(day => ({
+    date: day?.date,
+    maxTemp: day?.temperature_2m_max,
+    minTemp: day?.temperature_2m_min,
+    meanTemp: day?.temperature_2m_mean,
+    maxApparentTemp: day?.apparent_temperature_max,
+    minApparentTemp: day?.apparent_temperature_min,
+    meanApparentTemp: day?.apparent_temperature_mean,
   }));
 
   return (

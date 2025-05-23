@@ -27,22 +27,22 @@ const InputForm = ({ onSubmit, isLoading }) => {
   };
   
   const handleLatitudeChange = (e) => {
-    if (e.target.value === '') {
+    if (e?.target?.value === '') {
       setLatitude('');
       return;
     }
     
-    const value = e.target.value.replace(/[^\d.-]/g, '');
+    const value = e?.target?.value?.replace(/[^\d.-]/g, '');
     setLatitude(value);
   };
   
   const handleLongitudeChange = (e) => {
-    if (e.target.value === '') {
+    if (e?.target?.value === '') {
       setLongitude('');
       return;
     }
     
-    const value = e.target.value.replace(/[^\d.-]/g, '');
+    const value = e?.target?.value?.replace(/[^\d.-]/g, '');
     setLongitude(value);
   };
   
